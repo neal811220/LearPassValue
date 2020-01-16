@@ -8,15 +8,23 @@
 
 import UIKit
 
-class PassValueTableViewCell: UITableViewCell {
+protocol PassValueTableViewCellDelegate: AnyObject{
+    
+    func passButtontag(_ passValueTableViewCell: PassValueTableViewCell, buttonTag: Int)
+}
 
+class PassValueTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var outPutLabel: UILabel!
     
     @IBOutlet weak var buttonStyle: UIButton!
     
     var passData: ((UITableViewCell) -> Void)?
     
+    weak var delegate: PassValueTableViewCellDelegate?
+    
     @IBAction func deleteButton(_ sender: UIButton) {
+        delegate?.passButtontag(self, buttonTag: sender.tag)
         passData?(self)
     }
     override func awakeFromNib() {

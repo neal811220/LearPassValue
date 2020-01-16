@@ -69,7 +69,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="qgV-3R-Igg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qye-JA-o6B"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qye-JA-o6B">
+                            <connections>
+                                <action selector="segueToSecondView:" destination="BYZ-38-t0r" id="PB4-YQ-UWZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="8Cs-94-FEs" id="nN0-zi-AJo"/>
@@ -83,7 +87,7 @@
         <!--Second View Controller-->
         <scene sceneID="JY3-xO-NbX">
             <objects>
-                <viewController storyboardIdentifier="SecondVC" id="59B-za-XX8" customClass="SecondViewController" customModule="LearPassValue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondView" id="59B-za-XX8" customClass="SecondViewController" customModule="LearPassValue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LFb-fX-2oB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
